@@ -119,7 +119,14 @@
                             <a class="nav-link font-weight-bold" href="<?= site_url('client/blog'); ?>">BLOG</a>
                         </li>
                     </ul>
-                    <?php $keranjang  = '<i class="fas fa-shopping-cart"></i>  ' . count($cart_count) . ' items' ?>
+                    <?php
+                    $cart_qty = 0;
+                    if (isset($cart_count)) {
+                        $cart_qty = count($cart_count);
+                    }
+                    ?>
+
+                    <?php $keranjang  = '<i class="fas fa-shopping-cart"></i>  ' . $cart_qty . ' items' ?>
                     <li class="nav-link text-dark" style="font-size: 15px"><?php echo anchor('client/chart', $keranjang)  ?></li>
                     <!-- <a href="<?= site_url('client/chart'); ?>" class="nav-link text-dark" style="font-size: 15px"><i class="fas fa-shopping-cart"></i></a> -->
                 </div>

@@ -56,9 +56,17 @@ class Customer_m extends CI_Model
         $id_invoice = $this->db->insert_id();
 
         foreach ($this->cart->contents() as $item) {
+            $sale = [
+                'customer_id' => $id_invoice,
+                'total_price' => $item['price'] * $item['qty'],
+                'discount' => 0,
+                'final_price' => ($item['price'] * $item['qty']),
+                'cash' => $item['price'] * $item['qty']
+            ];
+            $this->db->insert('t_sale', $sale);
             $cart = [
                 // 'customer_id' => $id_invoice,
-                'sale_id' => $item['id'],
+                'sale_id' => $this->db->insert_id(),
                 'name' => $item['name'],
                 'price' => $item['price'],
                 'qty' => $item['qty'],

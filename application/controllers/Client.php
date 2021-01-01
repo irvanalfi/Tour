@@ -84,7 +84,7 @@ class Client extends CI_Controller
 
     public function chart()
     {
-		$data['cart'] = $this->cart_m->get($this->session->userdata("userid"));
+        $data['cart'] = $this->cart_m->get($this->session->userdata("userid"));
         $this->template->load('template_c', 'client/chart', $data);
     }
 
@@ -143,7 +143,7 @@ class Client extends CI_Controller
     }
     public function pembayaran()
     {
-        $this->load->view('client/pembayaran');
+        $this->template->load('template_c', 'client/pembayaran');
     }
     public function proses_bayar()
     {
