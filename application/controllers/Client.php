@@ -9,6 +9,7 @@ class Client extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Cetak_m');
+        $this->load->model('Client_m');
         $this->load->model('Customer_m');
         $this->load->model(['Item_m', 'category_m', 'type_m', 'cart_m']);
         $this->load->helper('text');
@@ -84,7 +85,7 @@ class Client extends CI_Controller
 
     public function chart()
     {
-		$data['cart'] = $this->cart_m->get($this->session->userdata("userid"));
+        $data['cart'] = $this->cart_m->get($this->session->userdata("userid"));
         $this->template->load('template_c', 'client/chart', $data);
     }
 
@@ -154,6 +155,67 @@ class Client extends CI_Controller
         } else {
             echo  "maaf pesanan gagal diproses";
         }
+    }
+
+    public function login()
+    {
+        check_already_login2();
+        $this->load->view('client/login');
+    }
+
+    public function proses()
+    {
+        $post = $this->input->post(null, TRUE);
+        if (isset($post['login'])) {
+            $query = $this->Client_m->login($post); ?>
+            <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/SweetAlert2/sweetalert2.min.css">
+            <script src="<?= base_url() ?>assets/plugins/SweetAlert2/sweetalert2.min.js"></script>
+            <style>
+                body {
+                    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+                    font-size: 1.124em !important;
+                    font-weight: normal;
+                }
+            </style>
+
+            <body></body>
+            <?php
+            if ($query->num_rows() > 0) {
+                $row = $query->row();
+                $params = array(
+                    'userid' => $row->user_id
+                );
+                $this->session->set_userdata($params); ?>
+                <script>
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success',
+                        text: 'Selamat, Anda berhasil login'
+                    }).then((result) => {
+                        window.location = '<?= site_url('client/home') ?>';
+                    })
+                </script>
+            <?php
+            } else { ?>
+                <script>
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Failure',
+                        text: 'Maaf,  belum terkonfirmasi belum terdaftar!'
+                    }).then((result) => {
+                        window.location = '<?= site_url('client/login') ?>';
+                    })
+                </script>
+<?php
+            }
+        }
+    }
+
+    public function logout()
+    {
+        $params = ['userid', 'level'];
+        $this->session->unset_userdata($params);
+        redirect('client/home');
     }
 }
 /* End of file Controllername.php */

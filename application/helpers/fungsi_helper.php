@@ -17,6 +17,24 @@ function check_not_login()
     }
 }
 
+function check_already_login2()
+{
+    $CI = &get_instance();
+    $user_session = $CI->session->userdata('userid');
+    if ($user_session) {
+        redirect('client/home');
+    }
+}
+
+function check_not_login2()
+{
+    $CI = &get_instance();
+    $user_session = $CI->session->userdata('userid');
+    if (!$user_session) {
+        redirect('client/login');
+    }
+}
+
 function check_admin()
 {
     $CI = &get_instance();

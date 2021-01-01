@@ -119,9 +119,23 @@
                             <a class="nav-link font-weight-bold" href="<?= site_url('client/blog'); ?>">BLOG</a>
                         </li>
                     </ul>
-                    <?php $keranjang  = '<i class="fas fa-shopping-cart"></i>  ' . count($cart_count) . ' items' ?>
+                    <?php
+                    $cart_qty = 0;
+                    if (isset($cart_count)) {
+                        $cart_qty = count($cart_count);
+                    }
+                    ?>
+                    <?php $keranjang  = '<i class="fas fa-shopping-cart"></i>  ' . $cart_qty . ' items' ?>
                     <li class="nav-link text-dark" style="font-size: 15px"><?php echo anchor('client/chart', $keranjang)  ?></li>
-                    <!-- <a href="<?= site_url('client/chart'); ?>" class="nav-link text-dark" style="font-size: 15px"><i class="fas fa-shopping-cart"></i></a> -->
+                    <li class="nav-link text-dark" style="font-size: 15px">
+                        <?php if ($this->session->userdata('userid')) {
+                        ?>
+                            <?php echo anchor('client/logout', '<span style="margin-left: 16px;">LOGOUT</span>') ?>
+                        <?php } else { ?>
+                            <?php echo anchor('client/login', '<span class="nav-link font-weight-bold" style="border-right: solid 0.5px #222831b6;padding-right: 16px;">LOGIN</span>') ?>
+                            <?php echo anchor('client/register', '<span class="nav-link font-weight-bold" style="margin-left: 16px;">REGISTER</span>') ?>
+                        <?php } ?>
+                    </li>
                 </div>
             </div>
         </nav>

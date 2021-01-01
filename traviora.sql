@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Des 2020 pada 01.52
+-- Waktu pembuatan: 01 Jan 2021 pada 11.52
 -- Versi server: 10.4.8-MariaDB
 -- Versi PHP: 7.3.11
 
@@ -72,7 +72,7 @@ CREATE TABLE `blog` (
 --
 
 INSERT INTO `blog` (`blog_id`, `title`, `image`, `content`, `writer`, `created`, `updated`) VALUES
-(1, 'Blue Fire Phenomenon on Ijen Crater', 'blog-160620-8d3be1831c.jpg', '<p><strong>Ijen Volcano</strong> or known as ‘Ijen Crater’ or ‘Kawah Ijen’ has elevation 2,769m (9,085 ft) which located in East Java, Indonesia. Highly recommended for mountain buffs and hikers. Ijen is a quiet but active volcano, and the landscape is dominated by the volcanic cones.</p>\r\n', 'admintraviora', '2020-12-15 17:05:34', '2020-12-15 11:05:34'),
+(1, 'Blue Fire Phenomenon on Ijen Crater', 'blog-160620-8d3be1831c.jpg', '<p><strong>Ijen Volcano</strong> or known as ‘Ijen Crater’ or ‘Kawah Ijen’ has elevation 2,769m (9,085 ft) which located in East Java, Indonesia. Highly recommended for mountain buffs and hikers. Ijen is a quiet but active volcano, and the landscape is dominated by the volcanic cones.</p>\r\n', 'admintraviora', '2020-12-18 08:12:34', '2020-12-18 02:12:34'),
 (2, 'Corona in Bali – Is it safe to travel?', 'blog-160620-090ec5e43d.jpg', '<p>The World Health Organization (WHO) has declared COVID-19 a pandemic. The risk of transmission around the world is increasing, especially the spread of corona in Bali</p>\r\n', 'admintraviora', '2020-12-08 08:43:33', '2020-12-08 02:43:33'),
 (3, 'NYEPI 2020 – What you can do in Bali', 'blog-160620-0e02852a6e.jpg', 'Bali has a big day called Nyepi Day. In 2020, preparations for the Nyepi celebration ritual begin a few weeks before the actual date with the large Ogoh-ogoh craft. If you travel around the island, maybe you will see some that are being made.', 'admintraviora', '2020-11-27 10:12:42', '2020-06-16 16:44:27'),
 (4, 'Tourist Attractions In Bali Began To Be Closed', 'blog-160620-05dd40be09.jpg', 'The Indonesian government has appealed to the public to implement social distancing along with the increasing number of positive cases of corona in Indonesia. Most companies and government agencies have also adopted work from home policies for their employees.', 'Irvan Alfi', '2020-11-27 10:12:45', '2020-06-16 16:45:41'),
@@ -101,8 +101,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`contact_id`, `name`, `email`, `subject`, `pesan`, `answer`, `created`, `updated`) VALUES
-(1, 'M. Irvan Alfi Hidayat', 'irvanhidayat0623@gmail.com', 'Saran', 'Mohon di tingkatkan lagi fitur fiturnya. masih banyak yang kurang smoth', NULL, '2020-05-17 21:33:12', NULL),
-(3, 'irvanalfy', 'irvan_alfy23@yahoo.com', 'tiket traviora', 'gcdhgklhl\'k;l', NULL, '2020-05-19 12:07:22', NULL);
+(1, 'M. Irvan Alfi Hidayat', 'irvanhidayat0623@gmail.com', 'Saran', 'Mohon di tingkatkan lagi fitur fiturnya. masih banyak yang kurang smoth', NULL, '2020-05-17 21:33:12', NULL);
 
 -- --------------------------------------------------------
 
@@ -271,7 +270,8 @@ INSERT INTO `p_unit` (`unit_id`, `name`, `status`, `created`, `updated`) VALUES
 (8, 'Lombok Island  Tour', 'E', '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
 (9, 'Mount Rinjani Trekking', 'E', '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
 (10, 'Gili Islands Tour', 'E', '2020-05-07 00:00:00', '0000-00-00 00:00:00'),
-(11, 'Batu', 'E', '2020-11-25 13:48:17', '2020-12-04 21:38:17');
+(11, 'Batu', 'E', '2020-11-25 13:48:17', '2020-12-04 21:38:17'),
+(13, 'kediri', 'E', '2020-12-18 08:25:13', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -439,13 +439,13 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `name`, `username`, `gender`, `email`, `password`, `address`, `level`, `status`, `avatar`, `created`, `updated`) VALUES
-(1, 'M. Irvan Alfi Hidayat', 'Super Admin', 'L', 'irvanhidayat0623@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Banyuwangi', '1', 'Y', 'user-131120-0799900a6d.jpg', '2020-11-13 11:04:22', NULL),
-(2, 'Septianda Reza Maulana', 'septiandareza', 'L', 'septiandareza07@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Perumahan Jati Asri Blok A3', '1', 'Y', '2.jpg', '2020-06-21 22:03:35', NULL),
+(1, 'M. Irvan Alfi Hidayat', 'Super Admin', 'L', 'irvanhidayat0623@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Banyuwangi', '1', 'Y', 'user-131120-0799900a6d.jpg', '2020-12-19 18:11:08', NULL),
+(2, 'Septianda Reza Maulana', 'septiandareza', 'L', 'septiandareza07@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Perumahan Jati Asri Blok A3', '1', 'N', '2.jpg', '2020-12-18 08:11:23', NULL),
 (3, 'Mirza Zarqani Rayhan', 'mirza', 'L', 'mirza@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Malang', '2', 'Y', 'user-131120-67e6ce3384.jpg', '2020-11-13 10:05:12', NULL),
 (5, 'Sifa Safira', 'safira', 'P', 'safira14@gmail.com', '7c222fb2927d828af22f592134e8932480637c0d', 'Malang Jawa Timur', '2', 'Y', 'user-151120-49f57a7e07.jpg', '2020-11-15 18:31:03', NULL),
 (6, 'Febri Alia Anggreini', 'febri', 'P', 'febrialia_anggreini@rocketmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Probolinggo', '2', 'N', '5.jpg', '2020-06-21 22:03:54', NULL),
 (7, 'alan perdana', 'alanWalker', 'L', 'alan@gmail.com', '12345678', 'mojokerto Jawa Timur', '2', 'N', 'user-010720-1bf9f2796b.JPG', '2020-07-01 20:50:17', NULL),
-(8, 'Wildanul Irham', 'danu123', 'L', 'wildanulirham26@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'padang, singojuruh, banyuwangi', '2', 'N', 'user-131120-4356aa0c67.jpg', '2020-11-15 18:29:24', NULL),
+(8, 'Wildanul Irham', 'danu123', 'L', 'wildanulirham26@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'padang, singojuruh, banyuwangi', '2', 'Y', 'user-131120-4356aa0c67.jpg', '2020-12-18 08:10:51', NULL),
 (9, 'Nida Futwiyatul Fatma', 'NidaFutwi', 'L', 'Nida123@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'nghjfjgkgh', '2', 'Y', 'user-151120-80b7ca2869.jpg', '2020-11-15 18:30:13', NULL),
 (10, 'Siti Hajar', 'hajar', 'L', 'sitihajar03@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'lkdfg;lkdf;lgk;d', '2', 'N', '', '2020-11-06 08:55:49', NULL),
 (11, 'Dwike Ikromi', 'dwike123', 'P', 'dwike@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'Banyuwangi', '1', 'Y', 'user-201120-bb20d3bea5.jpg', '2020-11-20 11:10:23', NULL);
@@ -557,7 +557,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `armada`
 --
 ALTER TABLE `armada`
-  MODIFY `armada_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `armada_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `blog`
@@ -599,7 +599,7 @@ ALTER TABLE `p_type`
 -- AUTO_INCREMENT untuk tabel `p_unit`
 --
 ALTER TABLE `p_unit`
-  MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `supplier`
