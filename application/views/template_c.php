@@ -125,6 +125,10 @@
                         $cart_qty = count($cart_count);
                     }
                     ?>
+<<<<<<< HEAD
+=======
+
+>>>>>>> f8f33c96be43c649ea597947a3b134dae11ce410
                     <?php $keranjang  = '<i class="fas fa-shopping-cart"></i>  ' . $cart_qty . ' items' ?>
                     <li class="nav-link text-dark" style="font-size: 15px"><?php echo anchor('client/chart', $keranjang)  ?></li>
                     <li class="nav-link text-dark" style="font-size: 15px">

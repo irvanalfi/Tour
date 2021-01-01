@@ -144,7 +144,7 @@ class Client extends CI_Controller
     }
     public function pembayaran()
     {
-        $this->load->view('client/pembayaran');
+        $this->template->load('template_c', 'client/pembayaran');
     }
     public function proses_bayar()
     {
